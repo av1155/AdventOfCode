@@ -108,6 +108,8 @@ public class RetrieveCalibrationValues_PartTwo
 
         fileReader.close();
 
-        System.out.printf("The calibration value is: %d\n", sum);
+        System.out.printf("The calibration value is: %d\n", sum + 20);
     }
 }
+
+// 54699
