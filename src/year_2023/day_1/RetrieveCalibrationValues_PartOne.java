@@ -8,7 +8,13 @@ public class RetrieveCalibrationValues_PartOne
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        File inputFile = new File("src/year_2023/day_1/input.txt");
+        File inputFile = new File("/Users/andreaventi/Developer/AdventOfCode/src/year_2023/day_1/input.txt");
+        if (!inputFile.exists())
+        {
+            System.out.println("The file does not exist.");
+            System.exit(0);
+        }
+
         Scanner fileReader = new Scanner(inputFile);
 
         int sum = 0, lineCounter = 0;

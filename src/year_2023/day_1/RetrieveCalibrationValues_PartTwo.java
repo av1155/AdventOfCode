@@ -8,7 +8,13 @@ public class RetrieveCalibrationValues_PartTwo
 {
     public static void main(String[] args) throws FileNotFoundException
     {
-        File inputFile = new File("src/year_2023/day_1/input.txt");
+        File inputFile = new File("/Users/andreaventi/Developer/AdventOfCode/src/year_2023/day_1/input.txt");
+        if (!inputFile.exists())
+        {
+            System.out.println("The file does not exist.");
+            System.exit(0);
+        }
+
         Scanner fileReader = new Scanner(inputFile);
 
         // Two-dimensional array of Strings to identify the numbers in the text file, and their corresponding digits
@@ -29,8 +35,10 @@ public class RetrieveCalibrationValues_PartTwo
         while (fileReader.hasNextLine())
         {
             String line = fileReader.nextLine();
-            System.out.println(line);
             lineCounter++;
+
+            // Print the line number and the line
+            System.out.printf("Line %d: %s\n", lineCounter, line);
 
             String firstDigit = "", lastDigit = "";
             String currentDigit = "";
@@ -81,6 +89,8 @@ public class RetrieveCalibrationValues_PartTwo
                     }
 
                     lastDigit = currentDigit;
+
+                    System.out.printf("Current digit: %s\n", currentDigit);
                 }
             }
 
@@ -89,8 +99,11 @@ public class RetrieveCalibrationValues_PartTwo
             {
                 int concatenatedNumber = Integer.parseInt(firstDigit + lastDigit);
                 sum += concatenatedNumber;
+
                 System.out.printf("Line %d: %d\n", lineCounter, concatenatedNumber);
             }
+
+            System.out.println();
         }
 
         fileReader.close();
