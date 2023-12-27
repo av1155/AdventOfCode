@@ -6,23 +6,23 @@ import java.util.Scanner;
 
 public class CalibrationValues
 {
-    public static void main(String[] args) throws FileNotFoundException
+    public static void main( String[] args ) throws FileNotFoundException
     {
-        File inputFile = new File("/Users/andreaventi/Developer/AdventOfCode/src/year_2023/day_1/input.txt");
+        File inputFile = new File( "/Users/andreaventi/Developer/AdventOfCode/src/year_2023/day_1/input.txt" );
 
-        if (inputFile.exists())
+        if ( inputFile.exists() )
         {
-            Scanner fileReader = new Scanner(inputFile);
-            System.out.println(getCalibrationValue(fileReader));
+            Scanner fileReader = new Scanner( inputFile );
+            System.out.println( getCalibrationValue( fileReader ) );
         }
 
         else
         {
-            System.out.println("File not found");
+            System.out.println( "File not found" );
         }
     }
 
-    public static int getCalibrationValue(Scanner fileReader)
+    public static int getCalibrationValue( Scanner fileReader )
     {
         String line;
         int lineCounter = 0, sum = 0;
@@ -30,29 +30,29 @@ public class CalibrationValues
         String firstNumber = "";
         String secondNumber = "";
 
-        while (fileReader.hasNextLine())
+        while ( fileReader.hasNextLine() )
         {
             firstNumber = "";
 
             line = fileReader.nextLine();
             lineCounter++;
 
-            for (int i = 0; i < line.length(); i++)
+            for ( int i = 0; i < line.length(); i++ )
             {
-                if (Character.isDigit(line.charAt(i)))
+                if ( Character.isDigit( line.charAt( i ) ) )
                 {
-                    if (firstNumber.isEmpty())
+                    if ( firstNumber.isEmpty() )
                     {
-                        firstNumber = String.valueOf(line.charAt(i));
+                        firstNumber = String.valueOf( line.charAt( i ) );
                     }
 
-                    secondNumber = String.valueOf(line.charAt(i));
+                    secondNumber = String.valueOf( line.charAt( i ) );
                 }
             }
 
             String concatenatedNumbers = firstNumber + secondNumber;
-            System.out.printf("Line %d: %s\n", lineCounter, concatenatedNumbers);
-            sum += Integer.parseInt(concatenatedNumbers);
+            System.out.printf( "Line %d: %s\n", lineCounter, concatenatedNumbers );
+            sum += Integer.parseInt( concatenatedNumbers );
         }
 
         return sum;
