@@ -62,8 +62,8 @@ Legend: ✅ Completed | ⬜ Not started
 ## Setup
 
 ### Prerequisites
-- Python 3.8+
-- Go 1.21+
+- Python 3.13.7
+- Go 1.25.2
 
 ### Getting Started
 1. Clone this repository
