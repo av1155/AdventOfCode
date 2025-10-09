@@ -1,4 +1,4 @@
-# utils/fetch/fetch_aoc_readme.sh
+# fetch_aoc_readme.sh
 
 Fetches **Advent of Code** problem descriptions and saves them as `README.md` files inside each local `dayXX` folder.  
 It supports **any year**, handles both **padded (`day01`)** and **unpadded (`day1`)** directories, and creates padded ones if missing.
