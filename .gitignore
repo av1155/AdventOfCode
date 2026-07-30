@@ -41,3 +41,6 @@ go.work
 # Personal notes
 notes.txt
 scratch.txt
+
+# Generated repo dumps fed to LLM tooling
+code_context.txt
